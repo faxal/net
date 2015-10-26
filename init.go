@@ -25,7 +25,7 @@ func (ip *IP) Scan(v interface{}) error {
 }
 
 func (ip *IP) Value() (driver.Value, error) {
-	if ip.IP == nil {
+	if ip == nil || ip.IP == nil {
 		return []byte(net.ParseIP("0.0.0.0")), nil
 	}
 	return []byte(ip.IP), nil
